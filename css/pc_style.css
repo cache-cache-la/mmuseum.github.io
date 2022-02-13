@@ -1,0 +1,280 @@
+@charset "utf-8";
+
+body {
+    font-family: "游ゴシック", "san-serif";
+}
+
+.main-vidual {
+  display: flex;
+  width: 100%;
+}
+
+.left-img,
+.right-img {
+  display: block;
+  width: 33%;
+}
+
+.center-img {
+    display: block;
+    width: 34%;
+}
+
+/*header固定*/
+#header {
+  height: 80px;
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  background: #333;
+  color: #fff;
+  padding: 20px 40px;
+}
+
+/*fixedクラス付与*/
+#header.fixed {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+.museum-set {
+  display: flex;
+}
+
+.museum-name h1{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.museum-name h2{
+    line-height: 1.4rem;
+    font-size: 1.0rem;
+}
+
+.museum-sns {
+  opacity: 0.8;
+  margin: 10px 0 0 30px;
+}
+
+.museum-sns a {
+  margin-left: 10px;
+}
+
+
+#g-navi {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+#g-navi li a {
+  display: block;
+  text-decoration: none;
+  color: #ccc;
+  padding: 10px;
+  font-weight: 500;
+  transition:all 0.3s;
+}
+
+#g-navi li.current a,
+#g-navi li a:hover{
+  color: #fff;
+}
+
+/*各セクションの設定*/
+.sec {
+  padding: 30px 0;
+  font-weight: 500;
+}
+
+.sec:nth-child(2n){
+  background: #ccc;
+}
+
+.sec-title {
+    text-align: center;
+    line-height: 3.0rem;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.intro-inner {
+    width: 100%;
+}
+
+.intro-painting {
+    position: relative;
+    background: linear-gradient(to right, white 60%, transparent), url(../img/painting.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 280px;
+}
+
+.intro-building {
+    position: relative;
+    background: linear-gradient(to left, white 65%, transparent), url(../img/building.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px;
+}
+
+.intro-text-first {
+    display: block;
+    position: absolute;
+    letter-spacing: 0.1rem;
+    line-height: 1.4rem;
+    top: 2.0rem;
+    left: 3.0rem;
+    width: 50%;
+}
+
+.intro-text-second {
+    display: block;
+    position: absolute;
+    letter-spacing: 0.1rem;
+    line-height: 1.4rem;
+    top: 2.0rem;
+    right: 3.0rem;
+    width: 50%;
+}
+
+/*event*/
+.event-inner {
+    padding: 0 30px;
+    display: flex;
+}
+
+.event-box {
+    width: 50%;
+}
+
+.schedule-title {
+    padding: 40px 0 10px;
+    font-weight: bold;
+}
+
+.schedule-text {
+    letter-spacing: 0.1rem;
+    line-height: 1.4rem;
+}
+
+/*access*/
+.access-inner {
+    padding: 0 30px;
+    display: flex;
+}
+.access-text {
+    padding-left: 30px;
+}
+
+.access-title {
+    padding: 50px 0 10px;
+    font-weight: bold;
+}
+
+.access-detail {
+    line-height: 1.4rem;
+}
+
+.access td {
+    padding: 10px;
+}
+
+#footer{
+  position: relative;
+  z-index: 2;
+}
+
+small {
+  background:#333;
+  color:#fff;
+  display: block;
+  text-align: center;
+  padding: 20px;
+}
+
+/*bottom-btn*/
+#bottom-btn {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(200px);
+}
+
+#bottom-btn li {
+  margin-bottom: 10px;
+}
+
+#appli-btn a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #993333;
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  transition:all 0.3s;
+}
+
+#appli-btn a:hover{
+  background: #cc9999;
+}
+
+#top-btn a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #003300;
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size:0.8rem;
+  font-weight: bold;
+  transition:all 0.3s;
+}
+
+#top-btn a:hover{
+  background: #99cc99;
+}
+
+
+/*bottom-btn animation*/
+#bottom-btn.UpMove{
+  animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#bottom-btn.DownMove{
+  animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(200px);
+  }
+}
